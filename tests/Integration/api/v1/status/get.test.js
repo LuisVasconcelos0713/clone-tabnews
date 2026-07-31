@@ -9,11 +9,11 @@ test("GET to /api/v1/status, should return 200", async () => {
   expect(responseBody.updated_at).toEqual(parsedUpdatedAt)
 
   const checkPostgresVersion = await responseBody.dependencies.postgres_version
-  expect(checkPostgresVersion).toMatch(/^\d+\.\d+$/)
   expect(checkPostgresVersion).toEqual("16.14")
 
   const checkMaxConnections = await responseBody.dependencies.database.max_connections
-  expect(Number(checkMaxConnections)).toBeGreaterThan(0)
+  expect(checkMaxConnections).toBeGreaterThan(0)
+  expect(checkMaxConnections)
   
 
   const checkActiveConnections = await responseBody.dependencies.database.active_connections
