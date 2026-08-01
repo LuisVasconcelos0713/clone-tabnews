@@ -21,7 +21,7 @@ const status = async (req, res) => {
     dependencies: {
       database:{
         max_connections: Number(maxConnectionsParsed),
-        active_connections: Number(activeConnectionsParsed),
+        active_connections: activeConnectionsParsed,
       },
       postgres_version: postgresVersionParsed,
     }
