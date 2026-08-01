@@ -17,7 +17,8 @@ test("GET to /api/v1/status, should return 200", async () => {
   
 
   const checkActiveConnections = await responseBody.dependencies.database.active_connections
-  expect(Number(checkActiveConnections)).toBeGreaterThanOrEqual(1)
+  //expect(checkActiveConnections).toBeGreaterThanOrEqual(1)
+  expect(checkActiveConnections).toEqual(1)
 
   console.log(responseBody.dependencies.postgres_version, responseBody.dependencies.database.max_connections, responseBody.dependencies.database.active_connections)
 });
