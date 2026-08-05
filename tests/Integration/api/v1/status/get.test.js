@@ -22,4 +22,3 @@ test("GET to /api/v1/status, should return 200", async () => {
 
   console.log(responseBody.dependencies.postgres_version, responseBody.dependencies.database.max_connections, responseBody.dependencies.database.active_connections)
 });
-
