@@ -10,9 +10,13 @@ const pool = new Pool({
 )
 
 const query = async (queryObjetct) => {
- 
- const result = await pool.query(queryObjetct)
- return result;
+ try{
+    const result = await pool.query(queryObjetct)
+    return result;
+ } catch (error){
+    console.error(error)
+    throw error;
+ } 
 }
 
 export default {
