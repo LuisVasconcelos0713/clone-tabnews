@@ -24,7 +24,7 @@ const query = async (queryObjetct) => {
     const result = await pool.query(queryObjetct)
     return result;
  } catch (error){
-    console.error(error)
+    console.error("Error: ", error)
     throw error;
  } 
 }
